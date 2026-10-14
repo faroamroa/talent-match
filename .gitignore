@@ -13,4 +13,7 @@ wheels/
 .env
 
 # Files
-inputs/*
+data/*
+
+# settings local
+settings.local*

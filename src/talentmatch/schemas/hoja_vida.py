@@ -40,7 +40,7 @@ class EstadoEstudio(StrEnum):
 
 
 class TipoEnlace(StrEnum):
-    """Plataforma a la que pertenece un enlace."""
+    """Plataforma a la que pertenece un enlace. Reconocible en el enlace."""
 
     LINKEDIN = "linkedin"
     GITHUB = "github"
@@ -66,7 +66,9 @@ class Enlace(BaseModel):
 class Contacto(BaseModel):
     """Datos de contacto."""
 
-    telefonos: list[str] = Field(default_factory=list, description="Teléfonos o celulares")
+    telefonos: list[str] = Field(
+        default_factory=list, description="Teléfonos o celulares"
+    )
     correos: list[str] = Field(default_factory=list, description="Correos electrónicos")
     enlaces: list[Enlace] = Field(default_factory=list)
 
@@ -74,7 +76,9 @@ class Contacto(BaseModel):
 class Estudio(BaseModel):
     """Formación académica formal (no cursos cortos ni certificaciones)."""
 
-    titulo: str | None = Field(None, description="Título o programa, ej. 'Ingeniería de Sistemas'")
+    titulo: str | None = Field(
+        None, description="Título o programa, ej. 'Ingeniería de Sistemas'"
+    )
     institucion: str | None = None
     nivel: NivelEducativo | None = None
     estado: EstadoEstudio | None = None
@@ -89,9 +93,12 @@ class Experiencia(BaseModel):
     empresa: str | None = None
     ubicacion: Ubicacion | None = None
     fecha_inicio: FechaParcial | None = None
-    fecha_fin: FechaParcial | None = Field(None, description="null si es el trabajo actual")
+    fecha_fin: FechaParcial | None = Field(
+        None, description="null si es el trabajo actual"
+    )
     es_actual: bool | None = Field(
-        None, description="true si el documento indica que sigue en el cargo (ej. 'actual')"
+        None,
+        description="true si el documento indica que sigue en el cargo (ej. 'actual')",
     )
     descripcion: str | None = Field(None, description="Funciones y logros del cargo")
     herramientas: list[str] = Field(
@@ -116,7 +123,9 @@ class HojaDeVida(BaseModel):
     documento_identidad: DocumentoIdentidad | None = None
     nacionalidad: str | None = None
     contacto: Contacto | None = None
-    residencia: Ubicacion | None = Field(None, description="Lugar donde vive la persona")
+    residencia: Ubicacion | None = Field(
+        None, description="Lugar donde vive la persona"
+    )
     titular: str | None = Field(None, description="Cargo actual o titular del perfil")
     resumen_perfil: str | None = None
     educacion: list[Estudio] = Field(default_factory=list)
@@ -127,10 +136,12 @@ class HojaDeVida(BaseModel):
         default_factory=list, description="Software, lenguajes y tecnologías que maneja"
     )
     habilidades: list[str] = Field(
-        default_factory=list, description="Habilidades técnicas y blandas, ej. 'liderazgo'"
+        default_factory=list,
+        description="Habilidades técnicas y blandas, ej. 'liderazgo'",
     )
     preferencia_modalidad: Modalidad | None = None
     aspiracion_salarial: Salario | None = None
     idioma_documento: str | None = Field(
-        None, description="Idioma en que está escrito el documento, código ISO 639-1 (es, en...)"
+        None,
+        description="Idioma en que está escrito el documento, código ISO 639-1 (es, en...)",
     )

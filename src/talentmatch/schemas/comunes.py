@@ -61,7 +61,8 @@ class Periodicidad(StrEnum):
 
 # Modelos
 class FechaParcial(BaseModel):
-    """Fecha con precisión de mes. Si solo se conoce el año, mes es null."""
+    """Fecha con precisión de mes. Si solo se conoce el año, mes es null.
+    El mes en texto se pasa al número de mes equivalente"""
 
     anio: int | None = Field(None, ge=1900, le=2100, description="Año de 4 cifras")
     mes: int | None = Field(None, ge=1, le=12, description="Mes de 1 a 12")
@@ -91,5 +92,6 @@ class Idioma(BaseModel):
         None, description="Nivel tal como aparece en el documento, sin interpretar"
     )
     nivel_mcer: NivelMCER | None = Field(
-        None, description="Nivel MCER solo si se menciona explícitamente o es inequívoco"
+        None,
+        description="Nivel MCER solo si se menciona explícitamente o es inequívoco",
     )

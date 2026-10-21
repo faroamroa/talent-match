@@ -41,17 +41,24 @@ class CondicionesContrato(BaseModel):
     modalidad: Modalidad | None = None
     tipo_contrato: TipoContrato | None = None
     duracion: str | None = Field(
-        None, description="Duración tal como aparece, ej. '6 meses'; null si es indefinido"
+        None,
+        description="Duración tal como aparece, ej. '6 meses'; null si es indefinido",
     )
-    jornada: str | None = Field(None, description="Horario o jornada, ej. 'tiempo completo'")
+    jornada: str | None = Field(
+        None, description="Horario o jornada, ej. 'tiempo completo'"
+    )
     salario: Salario | None = None
 
 
 class ExperienciaEspecifica(BaseModel):
     """Experiencia exigida en un cargo o área concreta."""
 
-    area_o_cargo: str | None = Field(None, description="Ej. 'desarrollo backend', 'analista de datos'")
-    anios_minimos: float | None = Field(None, ge=0, description="Años mínimos; 6 meses = 0.5")
+    area_o_cargo: str | None = Field(
+        None, description="Ej. 'desarrollo backend', 'analista de datos'"
+    )
+    anios_minimos: float | None = Field(
+        None, ge=0, description="Años mínimos; 6 meses = 0.5"
+    )
 
 
 # Modelo raíz
@@ -63,11 +70,16 @@ class Vacante(BaseModel):
     titulo: str | None = Field(None, description="Título del cargo")
     empresa: str | None = Field(None, description="Empresa que contrata, no el portal")
     portal_origen: str | None = Field(
-        None, description="Portal donde se publicó, ej. 'LinkedIn', 'Magneto', 'Comfama'"
+        None,
+        description="Portal donde se publicó, ej. 'LinkedIn', 'Magneto', 'Comfama'",
     )
-    codigo_vacante: str | None = Field(None, description="Identificador de la vacante en el portal")
+    codigo_vacante: str | None = Field(
+        None, description="Identificador de la vacante en el portal"
+    )
     ubicacion: Ubicacion | None = None
-    descripcion_cargo: str | None = Field(None, description="Resumen del propósito del cargo")
+    descripcion_cargo: str | None = Field(
+        None, description="Resumen del propósito del cargo"
+    )
     responsabilidades: list[str] = Field(default_factory=list)
     seniority: Seniority | None = None
     condiciones: CondicionesContrato | None = None
@@ -76,7 +88,8 @@ class Vacante(BaseModel):
     # Requisitos
     nivel_educativo_minimo: NivelEducativo | None = None
     profesiones_requeridas: list[str] = Field(
-        default_factory=list, description="Carreras o títulos aceptados, ej. 'Ingeniería de Sistemas'"
+        default_factory=list,
+        description="Carreras o títulos aceptados, ej. 'Ingeniería de Sistemas'",
     )
     anios_experiencia_general: float | None = Field(
         None, ge=0, description="Años mínimos de experiencia laboral total"
@@ -88,7 +101,8 @@ class Vacante(BaseModel):
         default_factory=list, description="Software, lenguajes y tecnologías exigidos"
     )
     herramientas_deseables: list[str] = Field(
-        default_factory=list, description="Software, lenguajes y tecnologías deseables o 'plus'"
+        default_factory=list,
+        description="Software, lenguajes y tecnologías deseables o 'plus'",
     )
     habilidades_obligatorias: list[str] = Field(default_factory=list)
     habilidades_deseables: list[str] = Field(default_factory=list)

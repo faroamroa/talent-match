@@ -168,16 +168,54 @@ print(Counter(p.suffix.lower() for p in archivos))
 #     (SALIDA / f"pagina{i}.png").write_bytes(png)
 
 
-# Prueba de extracción de información de una hoja de vida usando el LLM
+# # Prueba de extracción de información de una hoja de vida usando el LLM
 
+# from talentmatch.lectura import preparar
+# from talentmatch.extraccion import extraer
+# from talentmatch.schemas import HojaDeVida, Vacante
+
+# nombre_archivo = "CV_Fernando_Roa_EN.pdf"
+# doc = preparar(RAW / "cvs" / nombre_archivo)
+# print(f"Extrayendo información del archivo {RAW / "cvs" / nombre_archivo}")
+# print(doc.modo, len(doc.texto), len(doc.imagenes))   # primero verifica la preparación, sin gastar
+# datos, uso = extraer(doc, HojaDeVida)
+# print(uso)
+# print(datos.model_dump_json(indent=2))
+
+# Prueba de extracción y guardado de información en archivos json
+
+from datetime import datetime
 from talentmatch.lectura import preparar
 from talentmatch.extraccion import extraer
-from talentmatch.schemas import HojaDeVida, Vacante
+from talentmatch.almacenamiento import Metadatos, Extraccion, guardar
+from talentmatch.schemas.hoja_vida import HojaDeVida
+from talentmatch.schemas.vacante import Vacante
+from talentmatch.config import CARPETA_EXTRACCIONES
 
-nombre_archivo = "CV_Fernando_Roa_EN.pdf"
-doc = preparar(RAW / "cvs" / nombre_archivo)
-print(f"Extrayendo información del archivo {RAW / "cvs" / nombre_archivo}")
-print(doc.modo, len(doc.texto), len(doc.imagenes))   # primero verifica la preparación, sin gastar
-datos, uso = extraer(doc, HojaDeVida)
-print(uso)
-print(datos.model_dump_json(indent=2))
+ESQUEMAS = {"cvs": HojaDeVida, "vacantes": Vacante}
+
+for tipo, esquema in ESQUEMAS.items():
+    for archivo in sorted((RAW / tipo).iterdir())[:2]:      # [:2] → solo 2 por carpeta como prueba
+        destino = CARPETA_EXTRACCIONES / tipo / f"{archivo.name}.json"
+        if destino.exists():
+            print(f"ya existe, salto: {archivo.name}")
+            continue
+        try:
+            doc = preparar(archivo)
+            datos, completion = extraer(doc, esquema)
+            extraccion = Extraccion(
+                metadatos=Metadatos(
+                    archivo=doc.ruta.name,
+                    tipo=doc.ruta.parent.name,
+                    modo=doc.modo,
+                    modelo=completion.model,
+                    prompt_tokens=completion.usage.prompt_tokens,
+                    completion_tokens=completion.usage.completion_tokens,
+                    fecha=datetime.now(),
+                ),
+                texto=doc.texto,
+                datos=datos.model_dump(),
+            )
+            print("guardado:", guardar(extraccion = extraccion))
+        except Exception:
+            logger.exception("falló %s", archivo.name)

@@ -14,6 +14,7 @@ wheels/
 
 # Files
 data/*
+!data/golden/
 salidas/*
 
 # settings local

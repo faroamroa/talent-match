@@ -68,8 +68,5 @@ def extraer(doc: Documento, esquema: type[BaseModel]):
         max_retries=2,
         temperature=0
     )
-    # print(completion.model)                        # qué modelo respondió realmente
-    # print(completion.usage)                        # tokens enviados y recibidos
-    # print(completion.choices[0].finish_reason)     # por qué terminó
-    # print(completion.choices[0].message)           # lo que respondió, en crudo
+
     return datos, completion

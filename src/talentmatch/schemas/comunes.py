@@ -93,5 +93,5 @@ class Idioma(BaseModel):
     )
     nivel_mcer: NivelMCER | None = Field(
         None,
-        description="Nivel MCER solo si se menciona explícitamente o es inequívoco",
+        description="Nivel MCER solo si se menciona explícitamente. Elegir el más alto",
     )

@@ -130,7 +130,7 @@ class HojaDeVida(BaseModel):
     resumen_perfil: str | None = None
     educacion: list[Estudio] = Field(default_factory=list)
     experiencia: list[Experiencia] = Field(default_factory=list)
-    idiomas: list[Idioma] = Field(default_factory=list)
+    idiomas: list[Idioma] = Field(default_factory=list, description="Si se mencionan varios niveles del mismo idioma separarlos en la lista")
     certificaciones: list[Certificacion] = Field(default_factory=list)
     herramientas: list[str] = Field(
         default_factory=list, description="Software, lenguajes y tecnologías que maneja"

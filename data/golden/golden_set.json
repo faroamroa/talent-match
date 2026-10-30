@@ -1,8 +1,8 @@
 {
-  "version": 1,
+  "version": 3,
   "fecha": "2026-10-28",
-  "anotador": "claude-opus-5-5",
-  "criterio": "Idoneidad del perfil (cargo, experiencia, herramientas, formación). Ciudad y modalidad NO se usan para juzgar. Estudios incompletos sí cuentan.",
+  "anotador": "claude-opus-5-5: selección de máximo 3 por vacante sobre la v2",
+  "criterio": "Idoneidad del perfil. La experiencia demostrada en las descripciones pesa más que las herramientas solo listadas; cuenta la experiencia transferible narrada en prosa; la seniority pesa en vacantes senior; el empleador no es encaje por sí mismo. Ciudad, modalidad y atributos protegidos (p. ej. certificado de discapacidad) NO se usan. Estudios incompletos sí cuentan. Máximo 3 candidatos por vacante: los de encaje más directo; si ninguno encaja bien, los grado 1 más plausibles.",
   "escala": {
     "2": "encaja bien, lo entrevistaría",
     "1": "encaje parcial o transferible",
@@ -11,41 +11,17 @@
   "vacantes": {
     "AI Agents Developer & AI Strategist (Founding Team) _ The 100x Company _ LinkedIn.pdf": {
       "relevantes": {
-        "Jorge_Samuel_Tabares_Ochoa_CV.pdf": {
-          "grado": 2,
-          "razon": "Desarrollador IA freelance desde 2022: n8n, CrewAI, OpenAI API, webhooks"
-        },
         "CV Juan Pablo Mesa English.pdf": {
           "grado": 2,
-          "razon": "Applied AI Engineer: LangChain, OpenAI, Qdrant, FastAPI; PhD ingeniería"
-        },
-        "Emilio_Ivan_Gomez_Velez_Posada_CV.pdf": {
-          "grado": 2,
-          "razon": "Lead AI Engineer: RAG, flujos con agentes, LLMs"
+          "razon": "Ingeniero de IA aplicada con LLMs (OpenAI/Anthropic), flujos agénticos con tool calling, RAG y evals para clientes; ~7 años desarrollando."
         },
         "Oscar_Felipe_Duarte_Escobar_CV.pdf": {
           "grado": 2,
-          "razon": "Co-founder y Lead AI Engineer; LLMs, prompt engineering, producto IA"
-        },
-        "CV_Fernando_Roa_EN.pdf": {
-          "grado": 1,
-          "razon": "Product & Data Science Lead con GenAI, RAG y agentes; perfil más de ciencia de datos"
-        },
-        "Camilo_Jaramillo_CV.pdf": {
-          "grado": 1,
-          "razon": "ML Developer con LangChain, RAG y Azure OpenAI; ~2 años, menos senior"
+          "razon": "Lidera un ecosistema de agentes con RAG y MVP multiagente; ~10 años construyendo soluciones de ML en Python con APIs REST y despliegue en GCP."
         },
         "Ramiro_Tabares_Londono_CV.pdf": {
           "grado": 1,
-          "razon": "AI Engineer freelance con LangChain; software engineer"
-        },
-        "Tatiana_Marcela_Salazar_Fajardo_CV.pdf": {
-          "grado": 1,
-          "razon": "Automatización con n8n, OpenAI y APIs; perfil de líder de proyectos"
-        },
-        "Andres_Valencia_CV.pdf": {
-          "grado": 1,
-          "razon": "ML Engineer y Software Engineer fuerte; sin agentes LLM explícitos"
+          "razon": "Integra APIs de LLM (OpenAI, Gemini), function calling con LangChain y automatizaciones/RPA en trabajos reales, pero suma ~3 años de desarrollo para un rol senior."
         }
       }
     },
@@ -53,123 +29,63 @@
       "relevantes": {
         "CV Juan Pablo Mesa English.pdf": {
           "grado": 2,
-          "razon": "AI Engineer: LLMs, RAG, FastAPI, Postgres, Python"
-        },
-        "Emilio_Ivan_Gomez_Velez_Posada_CV.pdf": {
-          "grado": 2,
-          "razon": "Lead AI Engineer: RAG, LLMs, pipelines end-to-end"
+          "razon": "Integra LLMs en backends (Django/FastAPI), construye plataformas RAG y workflows agénticos con evals; más de 5 años como desarrollador y DS."
         },
         "Ramiro_Tabares_Londono_CV.pdf": {
           "grado": 2,
-          "razon": "Software + AI Engineer: Python, AWS Lambda, LangChain"
+          "razon": "Integró APIs de varios LLM en una plataforma con FastAPI y PostgreSQL desplegada en Docker y construyó chatbots con function calling; ~3 años de software."
         },
         "Oscar_Felipe_Duarte_Escobar_CV.pdf": {
-          "grado": 1,
-          "razon": "Ingeniero de IA con LLMs; formación en economía, poco backend explícito"
-        },
-        "Camilo_Jaramillo_CV.pdf": {
-          "grado": 1,
-          "razon": "ML Developer con RAG y LangChain; junior"
-        },
-        "Andres_Valencia_CV.pdf": {
-          "grado": 1,
-          "razon": "Software/ML Engineer sólido; sin integración de LLMs explícita"
-        },
-        "CV_Fernando_Roa_EN.pdf": {
-          "grado": 1,
-          "razon": "Data Science con GenAI y RAG; menos backend"
-        },
-        "Jorge_Samuel_Tabares_Ochoa_CV.pdf": {
-          "grado": 1,
-          "razon": "Integración de LLMs vía APIs y no-code; poco backend"
-        },
-        "Alonso_Samuel_Restrepo_Quintero_CV.pdf": {
-          "grado": 1,
-          "razon": "Backend Python/TypeScript con microservicios; sin LLMs"
-        },
-        "Mateo_Ivan_Cifuentes_Lozano_CV.pdf": {
-          "grado": 1,
-          "razon": "Senior Developer backend (Go, Java, Python); sin LLMs"
-        },
-        "Gustavo_Camilo_Tabares_Henao_CV.pdf": {
-          "grado": 1,
-          "razon": "Científica de datos con FastAPI y PyTorch"
+          "grado": 2,
+          "razon": "Diseña pipelines RAG, ajusta LLMs y despliega servicios de IA con APIs REST en GCP/Kubernetes; larga trayectoria de producto en IA."
         }
       }
     },
     "ANALISTA II _ GERENCIA DE TRANSFORMACION DE PROCESOS _ EL SALVADOR Detalles del puesto _ Una empresa del Grupo Bancolombia.pdf": {
       "relevantes": {
-        "Andres_Escobar_CV.pdf": {
-          "grado": 2,
-          "razon": "Consultor líder en BPM: ARIS, Bizagi, procesos y estrategia"
-        },
         "Alejandra_Orozco_CV.pdf": {
           "grado": 2,
-          "razon": "Green Belt Lean Six Sigma y laboratorio de innovación en Bancolombia; ingeniera de producción"
+          "razon": "Green Belt Lean Six Sigma haciendo mejora de procesos en un banco durante 4 años y luego gestionando metodologías del sistema de innovación con Design Thinking."
         },
-        "Gabriela_Elena_Cadavid_Bermudez_CV.pdf": {
+        "Andres_Escobar_CV.pdf": {
           "grado": 2,
-          "razon": "Bizagi, minería de procesos, service design; Grupo Bancolombia"
+          "razon": "Consultor líder en BPM y gerente de estrategia y operaciones: rediseñó procesos E2E y definió KPIs/SLAs; maneja ARIS y Bizagi."
         },
         "Emilio_Hector_Hurtado_Duarte_CV.pdf": {
-          "grado": 2,
-          "razon": "Ingeniero de sistemas con BPMN, BPM, MEGA HOPEX"
-        },
-        "Rodrigo_Ivan_Aguirre_Tabares_CV.pdf": {
           "grado": 1,
-          "razon": "Management Consultant en Accenture; ingeniero mecánico MBA"
-        },
-        "Tatiana_Marcela_Salazar_Fajardo_CV.pdf": {
-          "grado": 1,
-          "razon": "Transformación digital y automatización de procesos"
-        },
-        "Sebastian_Franco_Hurtado_CV.pdf": {
-          "grado": 1,
-          "razon": "Service designer: journeys y blueprint de servicio"
+          "razon": "Modela procesos en BPMN y hace ejercicios de arquitectura empresarial con BPM en proyectos reales, pero con foco en datos y TI más que en Lean u operación."
         }
       }
     },
     "ASESOR_A COMERCIAL MOVIL _ AGENCIA SANTA TECLA _ BANCOAGRICOLA SV Detalles del puesto _ Una empresa del Grupo Bancolombia.pdf": {
       "relevantes": {
-        "Jorge_Gustavo_Betancur_Pelaez_CV.pdf": {
-          "grado": 1,
-          "razon": "Asesor comercial y cajero por años; líder comercial"
+        "Alejandra_Mariana_Gomez_Velez_Jaramillo_CV.pdf": {
+          "grado": 2,
+          "razon": "Fue cajera general y asesora de servicio en banco, con cuadre de caja y asesoría y venta de portafolio bancario; también asesora de ventas."
         },
         "Mauricio_Quintero_CV.pdf": {
           "grado": 1,
-          "razon": "Direccionador de servicio en Bancolombia"
+          "razon": "3.5 años como direccionador de servicio en sucursal bancaria orientando a clientes y transacciones; sin venta de productos financieros demostrada."
         },
-        "Diego_Nicolas_Ibarra_Isaza_CV.pdf": {
+        "Jorge_Gustavo_Betancur_Pelaez_CV.pdf": {
           "grado": 1,
-          "razon": "Atención al cliente y caja; bachiller"
+          "razon": "Años como asesor comercial y cajero, líder comercial y administrador de una cooperativa (cartera, tesorería); sin productos bancarios."
         }
       }
     },
     "Analista II  Grupo Bancolombia.pdf": {
       "relevantes": {
-        "Andres_Escobar_CV.pdf": {
-          "grado": 2,
-          "razon": "Consultor en Business Process Management"
-        },
         "Alejandra_Orozco_CV.pdf": {
           "grado": 2,
-          "razon": "Lean Six Sigma y gestión de proyectos de innovación en Bancolombia"
+          "razon": "Mejora de procesos con Lean Six Sigma en banco y gestión del sistema de innovación (proceso, portafolio y metodologías) con equipos multidisciplinarios."
         },
-        "Gabriela_Elena_Cadavid_Bermudez_CV.pdf": {
+        "Andres_Escobar_CV.pdf": {
           "grado": 2,
-          "razon": "Diseño y modelado de procesos (Bizagi); experiencia en el banco"
+          "razon": "Consultor BPM y gerente de operaciones: rediseñó e integró procesos con múltiples sistemas, definió áreas, procesos y KPIs con clientes."
         },
-        "Emilio_Hector_Hurtado_Duarte_CV.pdf": {
+        "Tatiana_Marcela_Salazar_Fajardo_CV.pdf": {
           "grado": 1,
-          "razon": "BPMN y gestión de procesos desde TI"
-        },
-        "Rodrigo_Ivan_Aguirre_Tabares_CV.pdf": {
-          "grado": 1,
-          "razon": "Consultoría de gestión"
-        },
-        "Alejandra_Mariana_Gomez_Velez_Jaramillo_CV.pdf": {
-          "grado": 1,
-          "razon": "Gestión de proyectos; administradora de negocios"
+          "razon": "Lideró diseño y optimización de procesos, tradujo requerimientos de negocio y coordinó transformación digital."
         }
       }
     },
@@ -177,107 +93,59 @@
       "relevantes": {
         "Mauricio_Quintero_CV.pdf": {
           "grado": 2,
-          "razon": "Administrador de empresas, analista en Bancolombia, Power BI"
+          "razon": "Administrador de empresas con soporte de back office a equipos comerciales bancarios y analítica en Power BI/SQL para decisiones de negocio."
         },
-        "Daniela_Navarro_Duarte_CV.pdf": {
-          "grado": 1,
-          "razon": "Administradora de empresas con SAP y Excel"
+        "Sebastian_Rodrigo_Delgado_Duarte_CV.pdf": {
+          "grado": 2,
+          "razon": "13 años de BI en banca retail: soluciones para estrategias de productos financieros, venta cruzada y segmentación de clientes con SQL/DAX."
         },
-        "Ivan_Nicolas_Mejia_Navarro_CV.pdf": {
+        "Gustavo_Camilo_Tabares_Henao_CV.pdf": {
           "grado": 1,
-          "razon": "Negocios internacionales MBA, Tableau; sobrecalificado para semillero"
-        },
-        "Jorge_Gustavo_Betancur_Pelaez_CV.pdf": {
-          "grado": 1,
-          "razon": "Administración de negocios y gestión comercial"
-        },
-        "Tomas_Nicolas_Navarro_Cifuentes_CV.pdf": {
-          "grado": 1,
-          "razon": "Analista BI con Power BI; ingeniero químico"
-        },
-        "Beatriz_Ximena_Pelaez_Arboleda_CV.pdf": {
-          "grado": 1,
-          "razon": "Administración de empresas en curso; gerencia administrativa"
+          "razon": "Analista de negocio que automatiza reportes integrando ventas y finanzas con SQL/Python; formación en ingeniería civil."
         }
       }
     },
     "Analista de Servicios para los Clientes - Semillero Talento Diverso Detalles del puesto _ Una empresa del Grupo Bancolombia.pdf": {
       "relevantes": {
-        "Diego_Bermudez_CV.pdf": {
-          "grado": 2,
-          "razon": "Power BI, Power Automate, Power Apps, Excel avanzado; administración IT y finanzas"
-        },
         "Tomas_Nicolas_Navarro_Cifuentes_CV.pdf": {
           "grado": 2,
-          "razon": "Power BI, Power Apps, Power Automate, Excel VBA"
+          "razon": "Desarrolló soluciones BI con Power BI, Power Apps, Power Automate y VBA para optimizar procesos administrativos de clientes."
         },
         "Mauricio_Quintero_CV.pdf": {
-          "grado": 1,
-          "razon": "Analista con Power BI y SQL; administrador de empresas"
+          "grado": 2,
+          "razon": "Administrador de empresas que lidera tableros en Power BI y procesos ETL/automatización en la operación de un banco."
         },
-        "Tomas_Ibarra_CV.pdf": {
+        "Diego_Bermudez_CV.pdf": {
           "grado": 1,
-          "razon": "Economista con Power BI y Excel avanzado"
-        },
-        "Gabriela_Elena_Cadavid_Bermudez_CV.pdf": {
-          "grado": 1,
-          "razon": "Contadora con costos y Excel"
+          "razon": "Reportes KPI automatizados con Power BI, Power Automate y Power Apps en práctica, y apoyo financiero; perfil junior."
         }
       }
     },
     "Analista senior de datos SAT 1626507368-3 en Medellín _ Agencia de Empleo Comfama.pdf": {
       "relevantes": {
+        "Emilio_Hector_Hurtado_Duarte_CV.pdf": {
+          "grado": 1,
+          "razon": "Arquitecto de información y de datos con ~20 años en modelado, ETL y BI, liderando equipos; sin experiencia SAP BW/HANA/Datasphere."
+        },
         "Sebastian_Rodrigo_Delgado_Duarte_CV.pdf": {
           "grado": 1,
-          "razon": "Chief Intelligence/BI con ETL y modelado de datos; sin SAP BW"
-        },
-        "Nicolas_Urrego_Tabares_CV.pdf": {
-          "grado": 1,
-          "razon": "Ingeniero ETL y bases de datos; sin SAP"
+          "razon": "13 años en BI: modelos de datos, ETL y liderazgo de inteligencia de negocio; sin plataforma SAP."
         }
       }
     },
     "Analítico_a - Semillero Talento Diverso Detalles del puesto _ Una empresa del Grupo Bancolombia.pdf": {
       "relevantes": {
+        "Andres_Valencia_CV.pdf": {
+          "grado": 2,
+          "razon": "Diseñó modelos de ML en Python/Spark para estimar probabilidad de fraude y detectar comportamiento fraudulento, con monitoreo."
+        },
+        "Oscar_Felipe_Duarte_Escobar_CV.pdf": {
+          "grado": 2,
+          "razon": "Implementó modelos de clasificación para detección de fraude en tiempo real y amplia experiencia en ML con Python/SQL."
+        },
         "Gustavo_Quintero_CV.pdf": {
           "grado": 2,
-          "razon": "Analista de datos en Stradata AML; matemático; Python, SQL"
-        },
-        "Gustavo_Camilo_Tabares_Henao_CV.pdf": {
-          "grado": 2,
-          "razon": "Científica de datos en Stradata AML; Python, SQL, ML"
-        },
-        "Julian_Cifuentes_CV.pdf": {
-          "grado": 2,
-          "razon": "Científico de datos en Stradata; ingeniero de software"
-        },
-        "Arturo_Fajardo_Gomez_Velez_CV.pdf": {
-          "grado": 2,
-          "razon": "Ingeniero de sistemas junior: Python, SQL, ML"
-        },
-        "Tatiana_Mejia_Norena_CV.pdf": {
-          "grado": 2,
-          "razon": "Ingeniera informática por graduarse; Python, SQL, ciencia de datos"
-        },
-        "Tomas_Ibarra_CV.pdf": {
-          "grado": 1,
-          "razon": "Estadística y analítica en sector público"
-        },
-        "Diego_Bermudez_CV.pdf": {
-          "grado": 1,
-          "razon": "Estudiante de ingeniería de ciencia de datos"
-        },
-        "Felipe_Emilio_Cifuentes_Fajardo_CV.pdf": {
-          "grado": 1,
-          "razon": "Analista de datos junior con Python y SQL"
-        },
-        "Ivan_Aguirre_Arboleda_CV.pdf": {
-          "grado": 1,
-          "razon": "Analytics engineer; calidad de datos y detección de outliers"
-        },
-        "Mauricio_Quintero_CV.pdf": {
-          "grado": 1,
-          "razon": "Analista con Python y SQL en Bancolombia"
+          "razon": "Matemático y analista de datos en firma AML: soluciones analíticas de prevención de fraude y riesgo con Python e IA."
         }
       }
     },
@@ -285,35 +153,31 @@
       "relevantes": {
         "Emilio_Hector_Hurtado_Duarte_CV.pdf": {
           "grado": 1,
-          "razon": "Arquitectura empresarial (MEGA HOPEX), MBIT; sin seguridad explícita"
+          "razon": "Arquitecto de información con ejercicios de arquitectura empresarial y de solución en ~20 años; poco desarrollo de software y sin especialidad en seguridad."
         },
         "Nicolas_Urrego_Tabares_CV.pdf": {
           "grado": 1,
-          "razon": "Auditor de sistemas en ciberseguridad e infraestructura"
+          "razon": "Auditor de ciberseguridad con evaluaciones de riesgo y vulnerabilidades, e ingeniero de infraestructura; sin diseño de arquitectura de software."
         },
-        "Isabel_Daniela_Norena_Gomez_Velez_CV.pdf": {
+        "Fernanda_Ibarra_Zapata_CV.pdf": {
           "grado": 1,
-          "razon": "Analista líder de ingeniería de software con UML"
-        },
-        "Mateo_Ivan_Cifuentes_Lozano_CV.pdf": {
-          "grado": 1,
-          "razon": "Senior Developer con arquitectura de software"
+          "razon": "Ingeniera de sistemas senior que lideró la migración de monolito a microservicios y tiene certificación AWS Solutions Architect; sin experiencia en seguridad."
         }
       }
     },
     "Coordinador_a de mercadeo BTL 1626114038-747 en Medellín _ Agencia de Empleo Comfama.pdf": {
       "relevantes": {
         "Adriana_Tabares_Londono_CV.docx": {
-          "grado": 1,
-          "razon": "Brand manager y gerente de categoría"
+          "grado": 2,
+          "razon": "Brand manager y jefe de categoría (~8 años): lideró planes de activación de marca, experiencias de marca, lanzamientos de producto, merchandising y campañas; falta experiencia explícita en logística de eventos BTL."
         },
-        "Marcela_Echeverri_Galvis_CV.pdf": {
+        "Alejandra_Mariana_Gomez_Velez_Jaramillo_CV.pdf": {
           "grado": 1,
-          "razon": "Especialista en mercadeo; gerente comercial"
+          "razon": "Practicante de mercadeo (15 meses) con implementación de estrategias de activación y coordinación logística de eventos; experiencia BTL junior y luego carrera en gestión de proyectos."
         },
         "Ximena_Tabares_CV.pdf": {
           "grado": 1,
-          "razon": "Directora de marketing"
+          "razon": "Directora de marketing en empresa de servicios y organizadora de congresos y eventos propios; poca evidencia detallada de ejecución BTL."
         }
       }
     },
@@ -321,55 +185,31 @@
       "relevantes": {
         "Isabel_Daniela_Norena_Gomez_Velez_CV.pdf": {
           "grado": 2,
-          "razon": "Analista líder de ingeniería de software; ingeniera de sistemas"
+          "razon": "Ingeniera de sistemas que lidera proyectos de soluciones de TI en Protección: control del desarrollo de aplicaciones, alcance/tiempo/costo, coordinación de personal outsourcing y proveedores; certificación Scrum Master."
         },
         "Tatiana_Marcela_Salazar_Fajardo_CV.pdf": {
           "grado": 2,
-          "razon": "Líder de proyectos digitales y Scrum Master; ingeniera de sistemas"
+          "razon": "Ingeniera de sistemas con experiencia coordinando equipos de desarrollo (Product Manager con 25 personas, Scrum/Kanban) y liderando transformación digital y proyectos de e-commerce."
         },
-        "Ramiro_Sebastian_Pelaez_Franco_CV.pdf": {
-          "grado": 1,
-          "razon": "Ingeniero de sistemas con ITIL v3; perfil docente"
-        },
-        "Fernanda_Ibarra_Zapata_CV.pdf": {
-          "grado": 1,
-          "razon": "Senior Engineer full stack"
-        },
-        "Mateo_Ivan_Cifuentes_Lozano_CV.pdf": {
-          "grado": 1,
-          "razon": "Senior Developer"
-        },
-        "Ivan_Julian_Arboleda_Escobar_CV.pdf": {
-          "grado": 1,
-          "razon": "Product manager y Scrum Master"
-        },
-        "CV_Fernando_Roa_EN.pdf": {
-          "grado": 1,
-          "razon": "Interim CTO y líder de producto"
+        "Emilio_Hector_Hurtado_Duarte_CV.pdf": {
+          "grado": 2,
+          "razon": "Lideró por 4 años el equipo de infraestructura y datos de SECOP II con gerencia de proyecto y disponibilidad del servicio; coordinó equipos de testing y performance; ITIL v3 Foundation."
         }
       }
     },
     "Director of AI Strategy & Implementation.pdf": {
       "relevantes": {
-        "CV_Fernando_Roa_EN.pdf": {
-          "grado": 2,
-          "razon": "Interim CTO y Product & Data Science Lead con GenAI"
-        },
         "Oscar_Felipe_Duarte_Escobar_CV.pdf": {
           "grado": 2,
-          "razon": "Co-founder, AI Product Lead"
+          "razon": "AI Product Lead por 8 años liderando la estrategia técnica de automatización con ML en logística, inventario y marketing, y cofundador que lidera un ecosistema de agentes RAG/LLM con métricas de impacto."
+        },
+        "CV Juan Pablo Mesa English.pdf": {
+          "grado": 2,
+          "razon": "Head of AI en TractStudios implementando soluciones de IA para varias empresas; integración de LLMs (OpenAI, Anthropic) en software existente, RAG y flujos agénticos; PhD."
         },
         "Emilio_Ivan_Gomez_Velez_Posada_CV.pdf": {
           "grado": 1,
-          "razon": "Lead AI Engineer; menos nivel directivo"
-        },
-        "CV Juan Pablo Mesa English.pdf": {
-          "grado": 1,
-          "razon": "Consultor de IA aplicada"
-        },
-        "Jorge_Samuel_Tabares_Ochoa_CV.pdf": {
-          "grado": 1,
-          "razon": "Integraciones de IA y automatización"
+          "razon": "Lead AI Engineer con sistemas de IA en producción en AWS y traducción de necesidades de negocio con clientes; le falta evidencia de liderazgo estratégico a nivel organizacional."
         }
       }
     },
@@ -377,111 +217,79 @@
       "relevantes": {
         "Ivan_Hector_Franco_Mejia_CV.pdf": {
           "grado": 1,
-          "razon": "Gerente general; ingeniero mecánico especialista en gerencia de proyectos"
+          "razon": "Gerente general de empresa que fabrica postes para el sector eléctrico (certificación RETIE), con posicionamiento en mercados internacionales; rol gerencial-productivo, no de dirección comercial de energía."
         },
         "Sebastian_Andres_Quintero_Isaza_CV.pdf": {
           "grado": 1,
-          "razon": "Gerente general; ingeniero mecánico especialista en gerencia de proyectos"
+          "razon": "Gerente general de empresa que fabrica postes para el sector eléctrico (certificación RETIE), con posicionamiento en mercados internacionales; rol gerencial-productivo, no de dirección comercial de energía."
         },
         "Hector_Mejia_CV.pdf": {
           "grado": 1,
-          "razon": "Director de negocios internacionales; comprador estratégico"
-        },
-        "Marcela_Echeverri_Galvis_CV.pdf": {
-          "grado": 1,
-          "razon": "Gerente comercial; mercadeo"
+          "razon": "Director de negocios internacionales 4 años gestionando clientes y negociaciones, y comprador estratégico en Airbus; MBA. Sin experiencia en comercialización de energía."
         }
       }
     },
     "Director_a de proyectos 1626113250-138 en Medellín _ Agencia de Empleo Comfama.pdf": {
       "relevantes": {
         "Ivan_Hector_Franco_Mejia_CV.pdf": {
-          "grado": 2,
-          "razon": "RETIE, gerencia de proyectos, ingeniero mecánico; ~20 años de dirección"
+          "grado": 1,
+          "razon": "Ingeniero mecánico especialista en gerencia de proyectos; gerente con certificación RETIE de productos para el sector eléctrico y jefe de proyectos y montajes; sin proyectos fotovoltaicos ni EPC."
         },
         "Sebastian_Andres_Quintero_Isaza_CV.pdf": {
-          "grado": 2,
-          "razon": "RETIE, gerencia de proyectos, ingeniero mecánico; ~20 años de dirección"
+          "grado": 1,
+          "razon": "Ingeniero mecánico especialista en gerencia de proyectos; gerente con certificación RETIE de productos para el sector eléctrico y jefe de proyectos y montajes; sin proyectos fotovoltaicos ni EPC."
         },
         "Andres_Camilo_Mejia_Delgado_CV.pdf": {
           "grado": 1,
-          "razon": "Director de proyectos de ingeniería (geología)"
-        },
-        "Sebastian_Pelaez_Londono_CV.pdf": {
-          "grado": 1,
-          "razon": "Electromecánico con especialización en instrumentación"
-        },
-        "Alejandra_Mariana_Gomez_Velez_Jaramillo_CV.pdf": {
-          "grado": 1,
-          "razon": "Gerencia de proyectos y MS Project"
+          "razon": "Director de proyectos desde 2017 (antes coordinador): propuestas técnico-económicas, licitaciones y coordinación de ingenieros; dominio hidrogeológico, no energético."
         }
       }
     },
     "Ejecutivo_a de Convenios de Gerencia Comercial Regional Nomina Bogotá Detalles del puesto _ Una empresa del Grupo Bancolombia.pdf": {
       "relevantes": {
-        "Jorge_Gustavo_Betancur_Pelaez_CV.pdf": {
+        "Alejandra_Mariana_Gomez_Velez_Jaramillo_CV.pdf": {
           "grado": 1,
-          "razon": "Experiencia comercial y relacionamiento"
+          "razon": "Asesora de servicio al cliente y cajera en banco con venta de portafolio bancario, administradora de negocios y con gestión de convenios en proyectos; experiencia bancaria corta y antigua."
         },
         "Mauricio_Quintero_CV.pdf": {
           "grado": 1,
-          "razon": "Sector financiero (Bancolombia)"
+          "razon": "Más de 3 años en atención y educación financiera de clientes en sucursal bancaria y luego apoyo a equipos comerciales; administrador de empresas, sin negociación B2B."
         },
         "Marcela_Echeverri_Galvis_CV.pdf": {
           "grado": 1,
-          "razon": "Gerencia comercial"
+          "razon": "Ejecutiva de cuenta clave (key account) y gerente comercial; experiencia de relacionamiento empresarial pero fuera del sector financiero."
         }
       }
     },
     "Empleo como Analista de seguros en Servicios Nutresa _ Magneto.pdf": {
       "relevantes": {
-        "Tomas_Nicolas_Navarro_Cifuentes_CV.pdf": {
+        "Tomas_Emilio_Ochoa_Tabares_CV.docx": {
           "grado": 1,
-          "razon": "Power BI, Tableau, Looker; sin seguros"
+          "razon": "Más de 10 años como asistente técnico en aseguradoras (ramos generales, vida, automóviles) y tecnología en seguros; experiencia antigua y sin analítica de datos ni título profesional."
+        },
+        "Ivan_Aguirre_Arboleda_CV.pdf": {
+          "grado": 1,
+          "razon": "Analista de datos en una compañía financiera y de pensiones y en BI comercial; automatizó reportes y alertas de calidad de datos con Power BI/Looker; sin gestión de pólizas."
         },
         "Mauricio_Quintero_CV.pdf": {
           "grado": 1,
-          "razon": "Datos en sector financiero"
-        },
-        "Diego_Bermudez_CV.pdf": {
-          "grado": 1,
-          "razon": "Power Platform y finanzas"
+          "razon": "Analista en banco desarrollando tableros Power BI, ETL en Python y automatización de procesos operativos; sin experiencia en seguros."
         }
       }
     },
     "Empleo como Desarrollador ia – automatización y agentes (chatbots & voicebots) - 277323 en emtelco _ Magneto.pdf": {
       "relevantes": {
-        "Jorge_Samuel_Tabares_Ochoa_CV.pdf": {
-          "grado": 2,
-          "razon": "Desarrollo con IA y automatización: CrewAI, n8n, OpenAI"
-        },
         "CV Juan Pablo Mesa English.pdf": {
           "grado": 2,
-          "razon": "LangChain, RAG, OpenAI, Python"
-        },
-        "Emilio_Ivan_Gomez_Velez_Posada_CV.pdf": {
-          "grado": 2,
-          "razon": "RAG, agentes, LLMs en producción"
-        },
-        "Camilo_Jaramillo_CV.pdf": {
-          "grado": 2,
-          "razon": "LangChain, RAG, Azure OpenAI, AWS Sagemaker"
-        },
-        "Ramiro_Tabares_Londono_CV.pdf": {
-          "grado": 2,
-          "razon": "LangChain, Python, AWS"
+          "razon": "Construyó plataformas de búsqueda/chat basadas en RAG y flujos agénticos, e integró LLMs (OpenAI, Anthropic) vía APIs en Django; LangChain y bases vectoriales."
         },
         "Oscar_Felipe_Duarte_Escobar_CV.pdf": {
           "grado": 2,
-          "razon": "LLMs, prompt engineering, ingeniería de IA"
+          "razon": "Lidera un ecosistema de agentes de IA con RAG, búsqueda semántica y fine-tuning de LLMs con mejoras medidas en alucinación y costos; NLP para atención al cliente."
         },
-        "CV_Fernando_Roa_EN.pdf": {
-          "grado": 1,
-          "razon": "GenAI, RAG y agentes desde ciencia de datos"
-        },
-        "Tatiana_Marcela_Salazar_Fajardo_CV.pdf": {
-          "grado": 1,
-          "razon": "Automatización con n8n y OpenAI"
+        "Ramiro_Tabares_Londono_CV.pdf": {
+          "grado": 2,
+          "razon": "Desarrolla aplicaciones LLM con OpenAI y LangChain (chatbot financiero con function calling) e integró varios LLMs en una plataforma de automatización; RPA."
         }
       }
     },
@@ -489,27 +297,15 @@
       "relevantes": {
         "Rocio_Gabriela_Valencia_Hurtado_CV.pdf": {
           "grado": 2,
-          "razon": "Gestión de proyectos de CTI y cooperación internacional"
-        },
-        "Oscar_Orozco_Aguirre_CV.pdf": {
-          "grado": 1,
-          "razon": "Abogado corporativo; sin gestión de investigación"
-        },
-        "Daniela_Gabriela_Ochoa_Salazar_CV.pdf": {
-          "grado": 1,
-          "razon": "Formulación y gestión de proyectos FP7"
+          "razon": "Coordinadora de gestión de proyectos en un centro de investigaciones: formulación, seguimiento, vigilancia de fuentes de financiación nacionales e internacionales; coordina un programa de cooperación internacional; maestría en gestión CTI."
         },
         "Tatiana_Gabriela_Henao_Restrepo_CV.pdf": {
-          "grado": 1,
-          "razon": "Gobierno y RR. II., evaluación de proyectos, transferencia"
+          "grado": 2,
+          "razon": "Coordinadora de transferencia tecnológica: diseño de agendas de investigación, búsqueda de convocatorias nacionales e internacionales para recursos y gestión de redes universitarias; profesional en Gobierno y Relaciones Internacionales."
         },
-        "Julian_Duarte_Urrego_CV.pdf": {
-          "grado": 1,
-          "razon": "Director de investigación e innovación"
-        },
-        "Julian_Andres_Aguirre_Mejia_CV.pdf": {
-          "grado": 1,
-          "razon": "Investigador en escuela de negocios"
+        "Alejandra_Mariana_Gomez_Velez_Jaramillo_CV.pdf": {
+          "grado": 2,
+          "razon": "Más de 10 años en gestión de proyectos de investigación e innovación (UPB Innova, CTA): gestión de convenios, preparación de convocatorias, proyecto de regalías y relacionamiento con el ecosistema; especialista en gerencia de proyectos."
         }
       }
     },
@@ -517,23 +313,15 @@
       "relevantes": {
         "Sebastian_Alonso_Isaza_Ochoa_CV.pdf": {
           "grado": 2,
-          "razon": "C#, ASP.NET Core, React; Software Engineer"
-        },
-        "Esteban_Salazar_Quintero_CV.pdf": {
-          "grado": 1,
-          "razon": ".NET y front end; ingeniero electrónico"
+          "razon": "Casi 5 años desarrollando con C#, ASP.NET Core, Azure Functions, Service Bus, SQL Server y Terraform; diseñó una API de reconocimiento de voz en Azure."
         },
         "CV Juan Pablo Mesa English.pdf": {
           "grado": 1,
-          "razon": "Ingeniería de IA en Python"
+          "razon": "Integró LLMs en software existente y construyó agentes y RAG; experiencia en Python/Django, no en .NET/Azure."
         },
         "Camilo_Jaramillo_CV.pdf": {
           "grado": 1,
-          "razon": "Azure OpenAI y ML"
-        },
-        "Fernanda_Ibarra_Zapata_CV.pdf": {
-          "grado": 1,
-          "razon": "Full stack senior; sin .NET"
+          "razon": "Sistemas con Azure OpenAI y RAG, y desarrollo full stack; sin C#/.NET y con poca experiencia total."
         }
       }
     },
@@ -541,71 +329,47 @@
       "relevantes": {
         "Sebastian_Alonso_Isaza_Ochoa_CV.pdf": {
           "grado": 2,
-          "razon": "C#, .NET, React, TypeScript, Python"
+          "razon": "~5 años como ingeniero full stack con React/TypeScript y ASP.NET Core C#, microservicios en Azure Functions/Service Bus; además desarrolló una API de reconocimiento de voz."
         },
         "Fernanda_Ibarra_Zapata_CV.pdf": {
-          "grado": 2,
-          "razon": "Full stack senior: React, Node.js, Python, AWS"
-        },
-        "Mateo_Ivan_Cifuentes_Lozano_CV.pdf": {
           "grado": 1,
-          "razon": "Senior Developer con React y Python"
-        },
-        "Alonso_Samuel_Restrepo_Quintero_CV.pdf": {
-          "grado": 1,
-          "razon": "Fullstack con Node.js y TypeScript"
-        },
-        "Tomas_Arboleda_CV.pdf": {
-          "grado": 1,
-          "razon": "Fullstack con React y Node.js"
-        },
-        "Ramiro_Tabares_Londono_CV.pdf": {
-          "grado": 1,
-          "razon": "Software + AI Engineer"
+          "razon": "6+ años full stack (React, Node.js, microservicios, CI/CD) con rol senior; sin experiencia demostrada en .NET/C# ni en desarrollo con herramientas de IA."
         },
         "CV Juan Pablo Mesa English.pdf": {
           "grado": 1,
-          "razon": "AI Engineer con FastAPI"
+          "razon": "Ingeniero backend con 5+ años e integración de LLM (OpenAI, Anthropic, RAG) en productos; poca evidencia de frontend React y nada de .NET."
         }
       }
     },
     "Ingeniero_a Software Middleware (Nivel 3 - Semi Senior) en Capa Integración Uso 13 TI Detalles del puesto _ Una empresa del Grupo Bancolombia.pdf": {
       "relevantes": {
         "Alonso_Samuel_Restrepo_Quintero_CV.pdf": {
-          "grado": 1,
-          "razon": "Backend con microservicios y REST"
+          "grado": 2,
+          "razon": "Desarrolló sistema de mensajería interbancaria (SWIFT/ISO 20022) y middleware de facturación electrónica integrando proveedores; microservicios NestJS, colas y APIs REST."
         },
         "Mateo_Ivan_Cifuentes_Lozano_CV.pdf": {
-          "grado": 1,
-          "razon": "Backend senior"
+          "grado": 2,
+          "razon": "Senior backend con Java/Spring Boot y Go; APIs de alto volumen con arquitectura hexagonal y microservicios, e integraciones de e-commerce con terceros."
         },
         "Sebastian_Alonso_Isaza_Ochoa_CV.pdf": {
-          "grado": 1,
-          "razon": "Software engineer con REST API"
-        },
-        "Fernanda_Ibarra_Zapata_CV.pdf": {
-          "grado": 1,
-          "razon": "Full stack con Docker y Kubernetes"
+          "grado": 2,
+          "razon": "Diseña APIs ASP.NET Core y microservicios con comunicación asíncrona vía Azure Service Bus; migraciones e integraciones de datos entre sistemas."
         }
       }
     },
     "Ingeniero_a Software QA (Nivel 1 - Junior) en la Línea de Conocimiento Foco Sv Negocios 2 TI Detalles del puesto _ Una empresa del Grupo Bancolombia.pdf": {
       "relevantes": {
+        "Esteban_Salazar_Quintero_CV.pdf": {
+          "grado": 2,
+          "razon": "Diseñó y ejecutó pruebas automatizadas con Selenium (web) y Appium (móvil) con scripts en Java, validando flujos críticos; además desarrollador front end."
+        },
+        "Ramiro_Tabares_Londono_CV.pdf": {
+          "grado": 1,
+          "razon": "Automatización de navegador con Playwright y Selenium Grid, y ejecución/documentación de pruebas de software; no es rol de QA formal."
+        },
         "Isabel_Daniela_Norena_Gomez_Velez_CV.pdf": {
           "grado": 1,
-          "razon": "Especialización en aseguramiento de calidad; Java; muy senior para junior"
-        },
-        "Esteban_Salazar_Quintero_CV.pdf": {
-          "grado": 1,
-          "razon": "Appium y Java"
-        },
-        "Mateo_Ivan_Cifuentes_Lozano_CV.pdf": {
-          "grado": 1,
-          "razon": "Cypress y desarrollo"
-        },
-        "Sebastian_Hector_Henao_Cadavid_CV.pdf": {
-          "grado": 1,
-          "razon": "Estudiante de sistemas con testing"
+          "razon": "Analista de ingeniería de software con diseño y ejecución de casos de prueba y desarrollo en Java; pruebas manuales, no automatización."
         }
       }
     },
@@ -613,195 +377,111 @@
       "relevantes": {
         "Sebastian_Hector_Henao_Cadavid_CV.pdf": {
           "grado": 2,
-          "razon": "Último semestre de ingeniería de sistemas; React, Python, SQL"
-        },
-        "Oscar_Samuel_Gomez_Velez_Cifuentes_CV.pdf": {
-          "grado": 2,
-          "razon": "Estudiante de ingeniería de sistemas; React, Python"
-        },
-        "Nicolas_Rodrigo_Ibarra_Isaza_CV.pdf": {
-          "grado": 1,
-          "razon": "Técnico, junior full stack"
-        },
-        "Arturo_Fajardo_Gomez_Velez_CV.pdf": {
-          "grado": 1,
-          "razon": "Ingeniero de sistemas recién graduado; perfil de datos"
+          "razon": "Estudiante de último semestre de ingeniería de sistemas con 3 años desarrollando aplicaciones web con React y desplegándolas."
         },
         "Tatiana_Mejia_Norena_CV.pdf": {
-          "grado": 1,
-          "razon": "Ingeniera informática por graduarse"
-        },
-        "Tomas_Leonardo_Pelaez_Echeverri_CV.pdf": {
-          "grado": 1,
-          "razon": "Técnico full stack"
+          "grado": 2,
+          "razon": "Ingeniería informática próxima a graduarse, con experiencia como desarrolladora front end (React/TypeScript) y práctica en ciencia de datos."
         },
         "Alonso_Samuel_Restrepo_Quintero_CV.pdf": {
-          "grado": 1,
-          "razon": "Backend con ingeniería de sistemas en curso"
+          "grado": 2,
+          "razon": "Desarrollador backend con 3+ años (APIs REST, microservicios, Docker); ingeniería de sistemas en curso y tecnólogo en ADSI."
         }
       }
     },
     "Ingeniero_a de Software Middleware Capa Integracion Uso TI (Junior) Detalles del puesto _ Una empresa del Grupo Bancolombia.pdf": {
       "relevantes": {
-        "Fernanda_Ibarra_Zapata_CV.pdf": {
-          "grado": 1,
-          "razon": "AWS, Docker, Kubernetes; senior"
-        },
-        "Nicolas_Urrego_Tabares_CV.pdf": {
-          "grado": 1,
-          "razon": "Infraestructura TI"
-        },
-        "Sebastian_Hector_Henao_Cadavid_CV.pdf": {
-          "grado": 1,
-          "razon": "Estudiante de sistemas con Git"
-        },
         "Alonso_Samuel_Restrepo_Quintero_CV.pdf": {
+          "grado": 2,
+          "razon": "Desarrolló middleware de facturación electrónica y sistema de enrutamiento de mensajes interbancarios; Docker, Linux y despliegues en la nube."
+        },
+        "Sebastian_Alonso_Isaza_Ochoa_CV.pdf": {
           "grado": 1,
-          "razon": "Backend e integración por APIs"
+          "razon": "Microservicios con mensajería Azure Service Bus y aprovisionamiento con Terraform; sin IBM ACE/MQ ni rol de middleware."
+        },
+        "Mateo_Ivan_Cifuentes_Lozano_CV.pdf": {
+          "grado": 1,
+          "razon": "APIs de integración de e-commerce con terceros, desplegadas en AWS con Docker y CI; sin herramientas de middleware."
         }
       }
     },
     "Investigador_a cuantitativo_a 1626053532-57 en Barbosa _ Agencia de Empleo Comfama.pdf": {
       "relevantes": {
-        "Mateo_Ramiro_Delgado_Escobar_CV.pdf": {
+        "Ivan_Nicolas_Mejia_Navarro_CV.pdf": {
           "grado": 2,
-          "razon": "MSc economía aplicada; SPSS, EViews; analista financiero"
+          "razon": "Negociador internacional y MBA; consultorías con planes de mercado, análisis cuantitativo/cualitativo y estadístico, y asesoría a 84 emprendimientos."
         },
         "Tomas_Ibarra_CV.pdf": {
           "grado": 2,
-          "razon": "Economista; encuestas y estadística"
-        },
-        "Julian_Andres_Aguirre_Mejia_CV.pdf": {
-          "grado": 1,
-          "razon": "Investigador en negocios; SPSS"
+          "razon": "Economista con 5+ años en procesamiento, análisis y publicación de estadísticas en el DANE (encuestas, manufactura); maestría en analítica en curso."
         },
         "Adriana_Tabares_Londono_CV.docx": {
-          "grado": 1,
-          "razon": "Brand management en consumo masivo"
-        },
-        "Ivan_Nicolas_Mejia_Navarro_CV.pdf": {
-          "grado": 1,
-          "razon": "Negocios internacionales; SPSS básico"
+          "grado": 2,
+          "razon": "Gerente de marca y de categoría (joyería, accesorios, ropa interior, fragancias) con estrategias basadas en análisis de mercado y planeación de demanda con datos históricos e intención de compra."
         }
       }
     },
     "Manager, IA para personas con o sin discapacidad 1626458115-10 en Medellín _ Agencia de Empleo Comfama.pdf": {
       "relevantes": {
-        "CV_Fernando_Roa_EN.pdf": {
+        "Oscar_Felipe_Duarte_Escobar_CV.pdf": {
           "grado": 2,
-          "razon": "Master en data analytics; líder de producto y ciencia de datos con GenAI"
-        },
-        "Emilio_Ivan_Gomez_Velez_Posada_CV.pdf": {
-          "grado": 2,
-          "razon": "MSc; Lead AI Engineer; ML, DL, GenAI"
+          "razon": "10+ años en ML/DL y LLM (RAG, RLHF) liderando estrategia técnica y equipos como AI Product Lead y Lead AI Engineer, desplegando en GCP; no reporta maestría."
         },
         "CV Juan Pablo Mesa English.pdf": {
           "grado": 2,
-          "razon": "PhD; IA aplicada, ML, ciencia de datos"
+          "razon": "Doctor en ingeniería con 5+ años en ciencia de datos e IA; Head of AI construyendo productos RAG y agentes con LLM."
         },
-        "Oscar_Felipe_Duarte_Escobar_CV.pdf": {
+        "Emilio_Ivan_Gomez_Velez_Posada_CV.pdf": {
           "grado": 1,
-          "razon": "Lead AI; sin maestría"
-        },
-        "Andres_Valencia_CV.pdf": {
-          "grado": 1,
-          "razon": "ML Engineer; manager e instructor de ML"
+          "razon": "Lead AI Engineer con MSc, sistemas de ML/GenAI en producción en AWS; experiencia industrial y de gestión de equipos menor a la requerida."
         }
       }
     },
     "Novel Capital AI Product Engineer.pdf": {
       "relevantes": {
-        "Jorge_Samuel_Tabares_Ochoa_CV.pdf": {
-          "grado": 2,
-          "razon": "n8n, CrewAI, OpenAI API; automatizaciones"
-        },
         "Tatiana_Marcela_Salazar_Fajardo_CV.pdf": {
           "grado": 2,
-          "razon": "Product manager con n8n, OpenAI y APIs"
-        },
-        "CV_Fernando_Roa_EN.pdf": {
-          "grado": 2,
-          "razon": "Líder de producto y ciencia de datos con GenAI"
+          "razon": "Product Manager con equipo de 25 y líder de automatización con IA, n8n, Apps Script, OpenAI y APIs; ingeniera de sistemas."
         },
         "Oscar_Felipe_Duarte_Escobar_CV.pdf": {
           "grado": 2,
-          "razon": "AI Product Lead & Engineer"
-        },
-        "Ivan_Julian_Arboleda_Escobar_CV.pdf": {
-          "grado": 1,
-          "razon": "Product manager y MVP Lab"
+          "razon": "AI Product Lead y cofundador construyendo ecosistemas de agentes, RAG y automatizaciones de negocio con impacto medido."
         },
         "CV Juan Pablo Mesa English.pdf": {
-          "grado": 1,
-          "razon": "AI Engineer y consultor"
-        },
-        "Emilio_Ivan_Gomez_Velez_Posada_CV.pdf": {
-          "grado": 1,
-          "razon": "Lead AI Engineer"
+          "grado": 2,
+          "razon": "Construye productos con IA usados por miles de usuarios: plataformas RAG, flujos agénticos e integración de LLM (OpenAI, Anthropic)."
         }
       }
     },
     "Responsable de proyectos estratégicos 1626202212-20 en Medellín _ Agencia de Empleo Comfama.pdf": {
       "relevantes": {
+        "Emilio_Felipe_Jaramillo_Urrego_CV.pdf": {
+          "grado": 2,
+          "razon": "10+ años en Ruta N liderando proyectos de ecosistema como Pactos por la Innovación, Centro de Nanotecnología y CDI de Manufactura Avanzada."
+        },
+        "Daniela_Navarro_Duarte_CV.pdf": {
+          "grado": 2,
+          "razon": "Administradora de empresas con 5 años de asistencia técnica a la Gobernación en implementación y supervisión de planes, programas y proyectos públicos."
+        },
         "Tatiana_Gabriela_Henao_Restrepo_CV.pdf": {
           "grado": 2,
-          "razon": "Gobierno y RR. II.; evaluación social de proyectos"
-        },
-        "Alejandra_Mariana_Gomez_Velez_Jaramillo_CV.pdf": {
-          "grado": 1,
-          "razon": "Gestión de proyectos"
-        },
-        "Emilio_Felipe_Jaramillo_Urrego_CV.pdf": {
-          "grado": 1,
-          "razon": "Ruta N: pactos por la innovación"
-        },
-        "Sebastian_Franco_Hurtado_CV.pdf": {
-          "grado": 1,
-          "razon": "Ruta N: proyectos especiales"
-        },
-        "Tomas_Ibarra_CV.pdf": {
-          "grado": 1,
-          "razon": "Economista en sector público"
-        },
-        "Jorge_Gustavo_Betancur_Pelaez_CV.pdf": {
-          "grado": 1,
-          "razon": "Planeación estratégica"
+          "razon": "7 años en innovación y emprendimiento: formulación y seguimiento de indicadores, incidencia en políticas públicas de emprendimiento y gestión de convocatorias."
         }
       }
     },
     "Senior data engineer 1626494698-8 en Medellín _ Agencia de Empleo Comfama.pdf": {
       "relevantes": {
-        "Nicolas_Urrego_Tabares_CV.pdf": {
-          "grado": 2,
-          "razon": "Data Engineer ETL: SSIS, Databricks, Python, Azure"
-        },
         "Andres_Valencia_CV.pdf": {
           "grado": 2,
-          "razon": "Spark, Airflow, AWS S3, Azure; ML Engineer"
+          "razon": "~6 años en datos/ML con Spark, Airflow, Databricks y AWS (S3, SageMaker) en trabajos reales, construyendo pipelines y productos de datos en producción."
+        },
+        "Nicolas_Urrego_Tabares_CV.pdf": {
+          "grado": 1,
+          "razon": "~1,5 años como ingeniero ETL (SSIS, Databricks, SQL Server); antes infraestructura; sin Spark/S3/Airflow demostrados."
         },
         "Gustavo_Camilo_Tabares_Henao_CV.pdf": {
-          "grado": 2,
-          "razon": "Databricks, Spark; certificación Data Engineer AWS"
-        },
-        "Ramiro_Tabares_Londono_CV.pdf": {
           "grado": 1,
-          "razon": "AWS Glue/S3, Snowflake, DBT"
-        },
-        "Ivan_Aguirre_Arboleda_CV.pdf": {
-          "grado": 1,
-          "razon": "Pipelines, Airflow, AWS; ~3.5 años, sin Spark"
-        },
-        "Julian_Cifuentes_CV.pdf": {
-          "grado": 1,
-          "razon": "Spark y Hadoop"
-        },
-        "Arturo_Fajardo_Gomez_Velez_CV.pdf": {
-          "grado": 1,
-          "razon": "Azure Data Factory y ETL; junior"
-        },
-        "Sebastian_Rodrigo_Delgado_Duarte_CV.pdf": {
-          "grado": 1,
-          "razon": "ETL y modelado de datos"
+          "razon": "~2 años en ciencia de datos con pipeline PySpark sobre data lake; AWS solo por curso."
         }
       }
     }

@@ -1,4 +1,4 @@
-"""Búsqueda de hojas de vida para una vacante: vectores por sección, fusión RRF y filtros."""
+"""Búsqueda de hojas de vida para una vacante: un vector (o varios fusionados con RRF) y filtros."""
 
 import argparse
 from typing import Literal
@@ -6,10 +6,12 @@ from typing import Literal
 from pydantic import BaseModel
 from qdrant_client import QdrantClient, models
 
-from talentmatch.embeddings import MODELOS, embeber, recortar
+from talentmatch.embeddings import MODELOS, embeber_consulta, recortar
 from talentmatch.indexacion import (
     ORDEN_NIVEL,
+    SECCION_COMPLETA,
     SECCIONES,
+    SECCIONES_PRODUCCION,
     cargar,
     ciudades,
     coleccion,
@@ -39,6 +41,16 @@ class Requisitos(BaseModel):
     ciudades: list[str] | None = None
     nivel_min: int | None = None
     anios_min: float | None = None
+
+
+class Ajustes(BaseModel):
+    """Perillas de la búsqueda. Los valores por defecto son la configuración base."""
+
+    secciones: tuple[str, ...] = SECCIONES_PRODUCCION  # SECCIONES = 3 vectores fusionados con RRF
+    pesos: dict[str, float] | None = None  # peso de cada sección en RRF; None = todas iguales
+    k_rrf: int | None = None  # constante de RRF; None = la de Qdrant (2)
+    bono: float = BONO
+    candidatos: int = 50
 
 
 class Resultado(BaseModel):
@@ -84,19 +96,18 @@ def filtro_para(req: Requisitos, modo: ModoFiltro) -> models.Filter | None:
     )
 
 
-def _bono(payload: dict, req: Requisitos) -> float:
-    """Cumple: BONO completo. Dato desconocido: medio BONO. No cumple: 0."""
-    total = 0.0
+def _bono(payload: dict, req: Requisitos, bono: float) -> float:
+    """Cumple: bono completo. Dato desconocido: medio bono. No cumple: 0."""
     chequeos = [
         ("ciudad", req.ciudades, lambda x: x in req.ciudades),
         ("nivel_max", req.nivel_min, lambda x: x >= req.nivel_min),
         ("anios_exp", req.anios_min, lambda x: x >= req.anios_min),
     ]
+    total = 0.0
     for campo, exigido, cumple in chequeos:
-        if not exigido:
-            continue
-        valor = payload.get(campo)
-        total += BONO / 2 if valor is None else BONO * cumple(valor)
+        if exigido:
+            valor = payload.get(campo)
+            total += bono / 2 if valor is None else bono * cumple(valor)
     return total
 
 
@@ -107,30 +118,36 @@ def buscar(
     dim: int | None = None,
     k: int = 10,
     modo: ModoFiltro = "ninguno",
-    secciones: tuple[str, ...] = SECCIONES,
-    candidatos: int = 50,
+    ajustes: Ajustes | None = None,
 ) -> list[Resultado]:
     """Una búsqueda por sección de la vacante (Prefetch) y fusión de rankings con RRF."""
-    dim = dim or MODELOS[alias].dims[0]
+    ajustes = ajustes or Ajustes()
+    dim = dim or MODELOS[alias].dim_produccion
     req = requisitos(vacante)
     filtro = filtro_para(req, modo)
 
-    consultas = {s: t for s, t in textos_vacante(vacante).items() if s in secciones and t}
-    vectores = embeber(alias, list(consultas.values()), "consulta")
+    consultas = {s: t for s, t in textos_vacante(vacante).items() if s in ajustes.secciones and t}
+    vectores = embeber_consulta(alias, tuple(consultas.values()))
     prefetch = [
         models.Prefetch(
             query=recortar(vector, dim),
             using=nombre_vector(s, dim),
             filter=filtro,
-            limit=candidatos,
+            limit=ajustes.candidatos,
         )
         for s, vector in zip(consultas, vectores)
     ]
+    if ajustes.pesos or ajustes.k_rrf:
+        pesos = [ajustes.pesos.get(s, 1.0) for s in consultas] if ajustes.pesos else None
+        fusion = models.RrfQuery(rrf=models.Rrf(k=ajustes.k_rrf, weights=pesos))
+    else:
+        fusion = models.FusionQuery(fusion=models.Fusion.RRF)
+
     respuesta = cliente.query_points(
         coleccion(alias),
         prefetch=prefetch,
-        query=models.FusionQuery(fusion=models.Fusion.RRF),
-        limit=candidatos if modo == "suave" else k,
+        query=fusion,
+        limit=ajustes.candidatos if modo == "suave" else k,
     )
     resultados = [
         Resultado(archivo=p.payload["archivo"], puntaje=p.score, payload=p.payload)
@@ -138,7 +155,7 @@ def buscar(
     ]
     if modo == "suave":
         for r in resultados:
-            r.puntaje += _bono(r.payload, req)
+            r.puntaje += _bono(r.payload, req, ajustes.bono)
         resultados.sort(key=lambda r: r.puntaje, reverse=True)
     return resultados[:k]
 
@@ -157,10 +174,12 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Busca las mejores hojas de vida para una vacante")
     parser.add_argument("vacante", help="fragmento del nombre de archivo, ej. 'senior data engineer'")
     parser.add_argument("--modelo", choices=MODELOS, default="gemma")
-    parser.add_argument("--dim", type=int, help="tamaño de vector; por defecto el completo")
+    parser.add_argument("--dim", type=int, help="tamaño de vector; por defecto el de producción")
     parser.add_argument("-k", type=int, default=10)
-    parser.add_argument("--filtro", choices=MODOS, default="tolerante")
-    parser.add_argument("--secciones", nargs="+", choices=SECCIONES, default=list(SECCIONES))
+    parser.add_argument("--filtro", choices=MODOS, default="suave")
+    parser.add_argument(
+        "--secciones", nargs="+", choices=SECCIONES + (SECCION_COMPLETA,), default=list(SECCIONES_PRODUCCION)
+    )
     args = parser.parse_args()
 
     if args.dim and args.dim not in MODELOS[args.modelo].dims:
@@ -172,9 +191,8 @@ def main() -> None:
     print(f"Vacante: {archivo}\nRequisitos: {requisitos(vacante).model_dump()}\n")
 
     cliente = conectar()
-    resultados = buscar(
-        cliente, vacante, args.modelo, args.dim, args.k, args.filtro, tuple(args.secciones)
-    )
+    ajustes = Ajustes(secciones=tuple(args.secciones))
+    resultados = buscar(cliente, vacante, args.modelo, args.dim, args.k, args.filtro, ajustes)
     cliente.close()
     for i, r in enumerate(resultados, start=1):
         p = r.payload

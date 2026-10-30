@@ -1,10 +1,14 @@
+import logging
 from datetime import datetime
-from talentmatch.lectura import preparar
+
+from talentmatch.almacenamiento import Extraccion, Metadatos, guardar
+from talentmatch.config import CARPETA_EXTRACCIONES, RAW
 from talentmatch.extraccion import extraer
-from talentmatch.almacenamiento import Metadatos, Extraccion, guardar
+from talentmatch.lectura import preparar
 from talentmatch.schemas.hoja_vida import HojaDeVida
 from talentmatch.schemas.vacante import Vacante
-from talentmatch.config import CARPETA_EXTRACCIONES, RAW
+
+logger = logging.getLogger(__name__)
 
 ESQUEMAS = {"cvs": HojaDeVida, "vacantes": Vacante}
 

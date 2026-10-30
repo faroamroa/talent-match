@@ -2,8 +2,9 @@
 # Objetivo: ver qué formatos tienes y comprobar que pathlib
 #  maneja tus nombres con tildes y emojis
 
-from pathlib import Path
 from collections import Counter
+from pathlib import Path
+
 
 def raiz_proyecto() -> Path:
     for carpeta in [Path(__file__).resolve(), *Path(__file__).resolve().parents]:
@@ -184,13 +185,17 @@ print(Counter(p.suffix.lower() for p in archivos))
 
 # Prueba de extracción y guardado de información en archivos json
 
+import logging
 from datetime import datetime
-from talentmatch.lectura import preparar
+
+from talentmatch.almacenamiento import Extraccion, Metadatos, guardar
+from talentmatch.config import CARPETA_EXTRACCIONES
 from talentmatch.extraccion import extraer
-from talentmatch.almacenamiento import Metadatos, Extraccion, guardar
+from talentmatch.lectura import preparar
 from talentmatch.schemas.hoja_vida import HojaDeVida
 from talentmatch.schemas.vacante import Vacante
-from talentmatch.config import CARPETA_EXTRACCIONES
+
+logger = logging.getLogger(__name__)
 
 ESQUEMAS = {"cvs": HojaDeVida, "vacantes": Vacante}
 

@@ -4,8 +4,8 @@ from typing import Literal
 
 from pydantic import BaseModel
 
-from talentmatch.lectura import Modo
 from talentmatch.config import CARPETA_EXTRACCIONES
+from talentmatch.lectura import Modo
 
 Tipo = Literal["cvs", "vacantes"]
 

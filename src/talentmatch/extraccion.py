@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from pydantic import BaseModel
 
-from talentmatch.lectura import Documento, elegir_modo, renderizar_paginas
+from talentmatch.lectura import Documento, elegir_modo
 
 load_dotenv()
 
